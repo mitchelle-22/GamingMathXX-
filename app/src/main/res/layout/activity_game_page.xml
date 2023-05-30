@@ -71,15 +71,8 @@
 
     </LinearLayout>
 
-<!--    <TextView-->
-<!--        android:id="@+id/textViewQuestion"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="75dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@color/material_dynamic_primary90"-->
-<!--        android:gravity="center"-->
-<!--        android:text="TextView"-->
-<!--        android:textColor="@color/material_dynamic_neutral50"-->
-<!--        android:textSize="24sp" />-->
+
+
+
 
 </LinearLayout>
