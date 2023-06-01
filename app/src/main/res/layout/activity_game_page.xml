@@ -71,8 +71,29 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="24sp" />
 
-
+    <EditText
+        android:id="@+id/editTextNumber3"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Write your answer here"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp" />
 
 
 </LinearLayout>
