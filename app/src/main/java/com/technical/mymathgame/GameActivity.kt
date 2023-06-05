@@ -2,6 +2,7 @@ package com.technical.mymathgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -22,6 +23,11 @@ class GameActivity : AppCompatActivity() {
     var correctAnswer = 0
     var userScore = 0
     var userLife = 3
+
+
+    lateinit var timer : CountDownTimer
+    private val startTimerInMillis : Long = 60000
+    var timeLeftInMillis : Long = startTimerInMillis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page)
@@ -81,5 +87,9 @@ class GameActivity : AppCompatActivity() {
         correctAnswer = number1 + number2
     }
 
+    private fun startTimer()
+    {
+        timer = object: CountDownTimer(timeLeftInMillis,1000)
+    }
 
 }
