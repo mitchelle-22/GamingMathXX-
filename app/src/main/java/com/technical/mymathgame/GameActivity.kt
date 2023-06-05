@@ -43,8 +43,7 @@ class GameActivity : AppCompatActivity() {
 
             if(input == "")
             {
-                Toast.makeText(applicationContext,"Please write an answer or click the next button",
-                Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext,"Please write an answer or click the next button", Toast.LENGTH_SHORT).show()
             }
             else
             {
@@ -65,6 +64,8 @@ class GameActivity : AppCompatActivity() {
         }
         buttonNext.setOnClickListener {
 
+            gameContinue()
+           textAnswer.setText("")
         }
 
 
