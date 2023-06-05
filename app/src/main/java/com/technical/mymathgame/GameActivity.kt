@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import java.util.Locale
 import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
@@ -90,6 +91,41 @@ class GameActivity : AppCompatActivity() {
     private fun startTimer()
     {
         timer = object: CountDownTimer(timeLeftInMillis,1000)
+
+        {
+            override fun onTick(millsUnitFinished: Long) {
+                timeLeftInMillis = millsUnitFinished
+                updateText()
+
+            }
+
+            override fun onFinish() {
+
+                pauseTimer()
+                resetTimer()
+                updateText()
+
+                userLife--
+                textLife.text = userLife.toString()
+                textQuestion.text = "Sorry,time is up!"
+
+
+            }
+
+        }.start()
+    }
+    private fun updateText()
+    {
+             val remainingTime : Int = (timeLeftInMillis / 1000).toInt()
+        textLife.text = String.format(Locale.getDefault(),"%2d",remainingTime)
+    }
+    private fun pauseTimer()
+    {
+
+    }
+    private fun resetTimer()
+    {
+
     }
 
 }
