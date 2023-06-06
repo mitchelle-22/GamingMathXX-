@@ -15,4 +15,11 @@
     </style>
 
 
+    <style name="Theme.ResultPage" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/ice_blue</item>
+        <item name="colorPrimaryVariant">@color/ice_blue</item>
+    </style>
+
+
 </resources>
