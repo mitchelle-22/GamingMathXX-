@@ -27,7 +27,7 @@ class GameActivity : AppCompatActivity() {
 
 
     lateinit var timer : CountDownTimer
-    private val startTimerInMillis : Long = 60000
+    private val startTimerInMillis : Long = 20000
     var timeLeftInMillis : Long = startTimerInMillis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +54,7 @@ class GameActivity : AppCompatActivity() {
             }
             else
             {
+                pauseTimer()
                 val userAnswer = input.toInt()
                 if(userAnswer == correctAnswer)
                 {
@@ -62,6 +63,8 @@ class GameActivity : AppCompatActivity() {
                     textScore.text = userScore.toString()
                 }
                 else{
+
+
                      userLife--
                     textQuestion.text = "Sorry, yor answer is wrong"
                     textLife.text = userLife.toString()
@@ -71,6 +74,8 @@ class GameActivity : AppCompatActivity() {
         }
         buttonNext.setOnClickListener {
 
+            pauseTimer()
+            resetTimer()
             gameContinue()
            textAnswer.setText("")
         }
@@ -86,6 +91,8 @@ class GameActivity : AppCompatActivity() {
         textQuestion.text = "$number1 + $number2"
 
         correctAnswer = number1 + number2
+
+          startTimer()
     }
 
     private fun startTimer()
@@ -121,11 +128,12 @@ class GameActivity : AppCompatActivity() {
     }
     private fun pauseTimer()
     {
-
+            timer.cancel()
     }
     private fun resetTimer()
     {
-
+        timeLeftInMillis =  startTimerInMillis
+        updateText()
     }
 
 }
