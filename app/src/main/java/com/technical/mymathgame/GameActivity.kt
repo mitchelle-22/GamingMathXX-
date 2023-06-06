@@ -27,11 +27,13 @@ class GameActivity : AppCompatActivity() {
 
 
     lateinit var timer : CountDownTimer
-    private val startTimerInMillis : Long = 20000
+    private val startTimerInMillis : Long = 60000
     var timeLeftInMillis : Long = startTimerInMillis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_page)
+
+       supportActionBar?.title = "Addition"
 
         textScore = findViewById(R.id.textViewScore)
         textLife = findViewById(R.id.textViewLife)
@@ -74,9 +76,11 @@ class GameActivity : AppCompatActivity() {
         }
         buttonNext.setOnClickListener {
 
+
             pauseTimer()
             resetTimer()
             gameContinue()
+
            textAnswer.setText("")
         }
 
@@ -93,6 +97,8 @@ class GameActivity : AppCompatActivity() {
         correctAnswer = number1 + number2
 
           startTimer()
+
+
     }
 
     private fun startTimer()
@@ -124,7 +130,7 @@ class GameActivity : AppCompatActivity() {
     private fun updateText()
     {
              val remainingTime : Int = (timeLeftInMillis / 1000).toInt()
-        textLife.text = String.format(Locale.getDefault(),"%2d",remainingTime)
+        textTime.text = String.format(Locale.getDefault(),"%2d",remainingTime)
     }
     private fun pauseTimer()
     {
