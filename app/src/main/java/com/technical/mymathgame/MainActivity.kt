@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         multiplication.setOnClickListener {
-            val intent = Intent(this@MainActivity,GameActivity::class.java)
+            val intent = Intent(this@MainActivity, GameActivity::class.java)
             startActivity(intent)
         }
     }
