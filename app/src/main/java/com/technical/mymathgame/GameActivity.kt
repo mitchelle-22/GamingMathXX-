@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import java.util.Locale
 import kotlin.random.Random
+import android.content.Intent
 
 class GameActivity : AppCompatActivity() {
 
@@ -27,7 +28,7 @@ class GameActivity : AppCompatActivity() {
 
 
     lateinit var timer : CountDownTimer
-    private val startTimerInMillis : Long = 60000
+    private val startTimerInMillis : Long = 20000
     var timeLeftInMillis : Long = startTimerInMillis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,9 +80,23 @@ class GameActivity : AppCompatActivity() {
 
             pauseTimer()
             resetTimer()
-            gameContinue()
+
 
            textAnswer.setText("")
+
+            if(userLife == 0)
+            {
+                Toast.makeText(applicationContext,"Game over",Toast.LENGTH_LONG).show()
+                val intent = Intent(this@GameActivity,ResultActivity::class.java)
+                intent.putExtra("score",userScore)
+                startActivity(intent)
+
+                finish()
+            }
+            else
+            {
+                gameContinue()
+            }
         }
 
 

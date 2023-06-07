@@ -20,6 +20,9 @@ class ResultActivity : AppCompatActivity() {
         playAgain = findViewById(R.id.buttonAgain)
         exit = findViewById(R.id.buttonExit)
 
+        val score = intent.getIntExtra("score",0)
+        result.text = "Your score :" + score
+
         playAgain.setOnClickListener {
             val intent = Intent(this@ResultActivity,MainActivity::class.java)
             startActivity(intent)
