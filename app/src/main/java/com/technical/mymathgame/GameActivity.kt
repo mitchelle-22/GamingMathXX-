@@ -107,9 +107,9 @@ class GameActivity : AppCompatActivity() {
         val number1 = Random.nextInt(0,100)
         val number2 = Random.nextInt(0,100)
 
-        textQuestion.text = "$number1 + $number2"
+        textQuestion.text = "$number1 - $number2"
 
-        correctAnswer = number1 + number2
+        correctAnswer = number1 - number2
 
           startTimer()
 
